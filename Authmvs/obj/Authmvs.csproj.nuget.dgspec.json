@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\marti\\Desktop\\Backend webAvanzada\\Authmvs\\Authmvs.csproj": {}
+    "C:\\Users\\marti\\Desktop\\Auth-mvs\\Authmvs\\Authmvs.csproj": {}
   },
   "projects": {
-    "C:\\Users\\marti\\Desktop\\Backend webAvanzada\\Authmvs\\Authmvs.csproj": {
+    "C:\\Users\\marti\\Desktop\\Auth-mvs\\Authmvs\\Authmvs.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\marti\\Desktop\\Backend webAvanzada\\Authmvs\\Authmvs.csproj",
+        "projectUniqueName": "C:\\Users\\marti\\Desktop\\Auth-mvs\\Authmvs\\Authmvs.csproj",
         "projectName": "Authmvs",
-        "projectPath": "C:\\Users\\marti\\Desktop\\Backend webAvanzada\\Authmvs\\Authmvs.csproj",
+        "projectPath": "C:\\Users\\marti\\Desktop\\Auth-mvs\\Authmvs\\Authmvs.csproj",
         "packagesPath": "C:\\Users\\marti\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\marti\\Desktop\\Backend webAvanzada\\Authmvs\\obj\\",
+        "outputPath": "C:\\Users\\marti\\Desktop\\Auth-mvs\\Authmvs\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\marti\\AppData\\Roaming\\NuGet\\NuGet.Config"
