@@ -14,7 +14,13 @@ namespace DataDataContext.DataContext
 
        
 
-        public DbSet<User> Users { set; get; }
+         public DbSet<User> Users { set; get; }
+         public DbSet<UserProfile> UserProfiles { set; get; }
+         public DbSet<UserSchedule> UserSchedules { set; get; }
+        public DbSet<Theme> Themes { set; get; }
+        public DbSet<ThemeUser> ThemeUsers { set; get; }
+        public DbSet<Occupation> Occupations { set; get; }
+         public DbSet<OccupationUser> OccupationUsers { set; get; }
 
 
 

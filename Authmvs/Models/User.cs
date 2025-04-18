@@ -1,39 +1,36 @@
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ModelsUsers.Users
 {
     public class User
     {
-        public User()
-        {
-
-        }
-
-        public User(string Username, string Password, int UserStudent, int UserTutor)
-        {
-            this.Username = Username;
-            this.Password = Password;
-            this.UserStudent = UserStudent;
-            this.UserTutor = UserTutor;
-        }
-
         [Key]
+        [MaxLength(50)]
+        public int  UserId { get; set; }
 
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+        [Required, MaxLength(50)]
+        public string UserName { get; set; }
+
+        [Required, MaxLength(50)]
+        public string UserMail { get; set; }
+
+        [Required, MaxLength(50)]
+        public string UserPassword { get; set; }
 
         [Required]
-        public string Username { get; set; }
+        public string UserType { get; set; }
 
-        [Required]
-        public string Password { get; set; }
-      
-        [Required]
-        public int UserStudent { get; set; }
+        public UserProfile Profile { get; set; }
 
-        [Required]
-        public int  UserTutor { get; set; }
+        public User() { }
 
+        public User(int  userId, string userName, string userMail, string userPassword, string userType)
+        {
+            UserId = userId;
+            UserName = userName;
+            UserMail = userMail;
+            UserPassword = userPassword;
+            UserType = userType;
+        }
     }
 }

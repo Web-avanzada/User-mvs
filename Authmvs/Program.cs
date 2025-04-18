@@ -3,8 +3,12 @@ using DataDataContext.DataContext;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using ModelsUsers.Users;
 using RepositoriesIAuthenticate.IAuthenticate;
+using RepositoriesIAuthenticate.IGenericService;
+using Service.SUserService;
 using ServicesSAuthenticate.SAuthenticate;
+
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -23,6 +27,13 @@ builder.Services.AddDbContext<DataContext>(options =>
 
 // Register services
 builder.Services.AddScoped<IAuthenticate, SAuthenticate>();
+builder.Services.AddScoped<IGenericService<User>,SUserService>();
+builder.Services.AddScoped<IGenericService<UserProfile>,SUserProfile>();
+builder.Services.AddScoped<IGenericService<UserSchedule>,SUserSchedule>();
+builder.Services.AddScoped<IGenericService<Theme>,STheme>();
+builder.Services.AddScoped<IGenericService<ThemeUser>,SThemeUser>();
+builder.Services.AddScoped<IGenericService<Occupation>,SOccupation>();
+builder.Services.AddScoped<IGenericService<OccupationUser>,SOccupationUser>();
 
 // JWT configuration
 string? secretkey = builder.Configuration.GetSection("settings").GetSection("secretkey").ToString();

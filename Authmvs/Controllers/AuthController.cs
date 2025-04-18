@@ -22,7 +22,7 @@ namespace ControllersCAuthenticate.CAuthenticate
            
             try
             {
-                if (user.Username == "" || user.Password == "")
+                if (user.UserName == "" || user.UserPassword == "")
                 {
                    
                     return BadRequest("Please enter the data");
@@ -30,13 +30,13 @@ namespace ControllersCAuthenticate.CAuthenticate
                 else
                 {
 
-                    var UserValidated = this._authenticationUser.ValidateUser(user.Username , user.Password );
+                    var UserValidated = this._authenticationUser.ValidateUser(user.UserName , user.UserPassword );
                     if (UserValidated == null)
                     {
                         throw new Exception("User Not found");
                     }
                     //Create the token
-                    string token = _authenticationUser.GenerateToken(UserValidated.Id, UserValidated.Username);
+                    string token = _authenticationUser.GenerateToken(UserValidated.UserId, UserValidated.UserName);
                     return Ok(token);
                 }
             }
