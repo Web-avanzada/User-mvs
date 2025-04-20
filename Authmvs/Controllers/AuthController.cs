@@ -1,3 +1,4 @@
+using DTOs;
 using Microsoft.AspNetCore.Mvc;
 using ModelsUsers.Users;
 using RepositoriesIAuthenticate.IAuthenticate;
@@ -16,8 +17,8 @@ namespace ControllersCAuthenticate.CAuthenticate
 
         }
 
-        [HttpPost("/userValidate")]
-        public IActionResult Validate(User user)
+        [HttpPost("/userValidateLogin")]
+        public IActionResult Validate([FromBody] LoginRequest user)
         {
            
             try
