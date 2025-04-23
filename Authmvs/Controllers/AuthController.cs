@@ -23,7 +23,7 @@ namespace ControllersCAuthenticate.CAuthenticate
            
             try
             {
-                if (user.UserName == "" || user.UserPassword == "")
+                if (user.UserMail == "" || user.UserPassword == "")
                 {
                    
                     return BadRequest("Please enter the data");
@@ -31,7 +31,7 @@ namespace ControllersCAuthenticate.CAuthenticate
                 else
                 {
 
-                    var UserValidated = this._authenticationUser.ValidateUser(user.UserName , user.UserPassword );
+                    var UserValidated = this._authenticationUser.ValidateUser(user.UserMail , user.UserPassword );
                     if (UserValidated == null)
                     {
                         throw new Exception("User Not found");

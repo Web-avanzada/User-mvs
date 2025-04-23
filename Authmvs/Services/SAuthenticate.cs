@@ -80,7 +80,7 @@ namespace ServicesSAuthenticate.SAuthenticate
             else
             {
 
-                User? validatedUser = _DataContext.Users.FirstOrDefault(x => x.UserName == user && x.UserPassword == password);
+                User? validatedUser = _DataContext.Users.FirstOrDefault(x => x.UserMail == user && x.UserPassword == password);
                 if (validatedUser != null)
                 {
                     return validatedUser;
