@@ -5,7 +5,7 @@ namespace ModelsUsers.Users
     public class User
     {
         [Key]
-        [MaxLength(50)]
+        
         public int  UserId { get; set; }
 
         [Required, MaxLength(50)]
@@ -20,7 +20,7 @@ namespace ModelsUsers.Users
         [Required]
         public string UserType { get; set; }
 
-        public UserProfile Profile { get; set; }
+
 
         public User() { }
 
