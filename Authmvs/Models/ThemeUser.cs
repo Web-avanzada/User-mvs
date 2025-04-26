@@ -9,14 +9,14 @@ namespace ModelsUsers.Users
         [Key]
         public int ThemeStudentId { get; set; }
 
-        public int UserProfilesId { get; set; }
-        public int ThemeId { get; set; }
+       
+      
 
         [ForeignKey("UserProfilesId")]
-        public UserProfile UserProfile { get; set; }
+        public int UserProfilesId { get; set; }
 
         [ForeignKey("ThemeId")]
-        public Theme Theme { get; set; }
+       public int ThemeId { get; set; }
 
         public ThemeUser() { }
 

@@ -42,7 +42,6 @@ namespace Service.SUserService
         public async Task<IEnumerable<UserSchedule>> GetAllAsync()
         {
             return await _context.UserSchedules
-                                 .Include(us => us.UserProfile) 
                                  .ToListAsync();
         }
 
@@ -50,7 +49,6 @@ namespace Service.SUserService
         public async Task<UserSchedule> GetByIdAsync(int id)
         {
             return await _context.UserSchedules
-                                 .Include(us => us.UserProfile) 
                                  .FirstOrDefaultAsync(us => us.UserScheduleId == id);
         }
 

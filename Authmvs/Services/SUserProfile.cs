@@ -52,7 +52,6 @@ namespace Service.SUserService
         public async Task<UserProfile> GetByIdAsync(int id)
         {
             return await _context.UserProfiles
-                                 .Include(up => up.User) 
                                  .FirstOrDefaultAsync(up => up.UserProfilesId == id);
         }
 

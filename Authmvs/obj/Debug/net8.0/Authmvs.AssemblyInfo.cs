@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Authmvs")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4150c0400aa017fee928ca2b6eada79237bb8f27")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+92ba4c8070cd5a58135c0f2beca2d000f00a2002")]
 [assembly: System.Reflection.AssemblyProductAttribute("Authmvs")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Authmvs")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -38,8 +38,7 @@ namespace Service.SUserService
         public async Task<IEnumerable<ThemeUser>> GetAllAsync()
         {
             return await _context.ThemeUsers
-                                 .Include(tu => tu.UserProfile)
-                                 .Include(tu => tu.Theme)
+
                                  .ToListAsync();
         }
 
@@ -47,8 +46,6 @@ namespace Service.SUserService
         public async Task<ThemeUser> GetByIdAsync(int id)
         {
             return await _context.ThemeUsers
-                                 .Include(tu => tu.UserProfile)
-                                 .Include(tu => tu.Theme)
                                  .FirstOrDefaultAsync(tu => tu.ThemeStudentId == id);
         }
 

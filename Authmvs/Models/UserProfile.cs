@@ -10,8 +10,6 @@ namespace ModelsUsers.Users
         [Key]
         public int UserProfilesId { get; set; }
 
-        [Required]
-        public int UserId { get; set; }
 
         [Required]
         public DateTime CreateDate { get; set; }
@@ -31,7 +29,8 @@ namespace ModelsUsers.Users
         public bool Status { get; set; }
 
         [ForeignKey("UserId")]
-        public User User { get; set; }
+        
+        public int UserId { get; set; }
 
         public UserProfile() { }
 

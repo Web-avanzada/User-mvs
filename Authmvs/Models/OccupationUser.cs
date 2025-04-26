@@ -9,14 +9,14 @@ namespace ModelsUsers.Users
         [Key]
         public int OccupationTutorId { get; set; }
 
-        public int UserProfilesId { get; set; }
-        public int OccupationId { get; set; }
+        
+  
 
         [ForeignKey("UserProfilesId")]
-        public UserProfile UserProfile { get; set; }
+        public int UserProfilesId { get; set; }
 
         [ForeignKey("OccupationId")]
-        public Occupation Occupation { get; set; }
+          public int OccupationId { get; set; }
 
         public OccupationUser() { }
 

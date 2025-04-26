@@ -38,8 +38,7 @@ namespace Service.SUserService
         public async Task<IEnumerable<OccupationUser>> GetAllAsync()
         {
             return await _context.OccupationUsers
-                                 .Include(ou => ou.UserProfile)
-                                 .Include(ou => ou.Occupation)
+
                                  .ToListAsync();
         }
 
@@ -47,8 +46,6 @@ namespace Service.SUserService
         public async Task<OccupationUser> GetByIdAsync(int id)
         {
             return await _context.OccupationUsers
-                                 .Include(ou => ou.UserProfile)
-                                 .Include(ou => ou.Occupation)
                                  .FirstOrDefaultAsync(ou => ou.OccupationTutorId == id);
         }
 
