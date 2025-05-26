@@ -10,42 +10,42 @@ namespace ControllersCAuthenticate.CAuthenticate
     public class CAuthenticateController : ControllerBase
     {
         private readonly IAuthenticate _authenticationUser;
-        private readonly User _IUser;
+
         public CAuthenticateController(IAuthenticate authenticationUser)
         {
             this._authenticationUser = authenticationUser;
-
         }
 
         [HttpPost("/userValidateLogin")]
         public IActionResult Validate([FromBody] LoginRequest user)
         {
-           
             try
             {
-                if (user.UserMail == "" || user.UserPassword == "")
+                if (string.IsNullOrEmpty(user.UserMail) || string.IsNullOrEmpty(user.UserPassword))
                 {
-                   
                     return BadRequest("Please enter the data");
                 }
-                else
-                {
 
-                    var UserValidated = this._authenticationUser.ValidateUser(user.UserMail , user.UserPassword );
-                    if (UserValidated == null)
-                    {
-                        throw new Exception("User Not found");
-                    }
-                    //Create the token
-                    string token = _authenticationUser.GenerateToken(UserValidated.UserId, UserValidated.UserName);
-                    return Ok(token);
+                var validatedResult = this._authenticationUser.ValidateUser(user.UserMail, user.UserPassword);
+
+                if (validatedResult.user == null)
+                {
+                    throw new Exception("User Not found");
                 }
+
+                // Aquí generas el token con id, userProfilesId y username
+                string token = _authenticationUser.GenerateToken(
+                    validatedResult.user.UserId,
+                    validatedResult.userProfilesId,
+                    validatedResult.user.UserName
+                );
+
+                return Ok(token);
             }
             catch (Exception ex)
             {
                 return StatusCode(500, ex.Message);
             }
         }
-
     }
 }

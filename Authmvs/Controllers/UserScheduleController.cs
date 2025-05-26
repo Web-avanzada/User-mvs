@@ -4,7 +4,6 @@ using RepositoriesIAuthenticate.IGenericService;
 
 namespace API.Controllers
 {
-
     [ApiController]
     [Route("api/[controller]")]
     public class UserScheduleController : ControllerBase
@@ -27,7 +26,24 @@ namespace API.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(UserSchedule entity) => Ok(await _service.CreateAsync(entity));
+        public async Task<IActionResult> Create(UserSchedule entity) =>
+            Ok(await _service.CreateAsync(entity));
+
+        [HttpPost("bulk")]
+        public async Task<IActionResult> CreateBulk([FromBody] List<UserSchedule> schedules)
+        {
+            if (schedules == null || !schedules.Any())
+            {
+                return BadRequest("La lista de horarios está vacía.");
+            }
+
+            foreach (var schedule in schedules)
+            {
+                await _service.CreateAsync(schedule);
+            }
+
+            return Ok(new { message = "Horarios guardados correctamente", count = schedules.Count });
+        }
 
         [HttpPut("{id}")]
         public async Task<IActionResult> Update(int id, UserSchedule entity)
@@ -43,5 +59,4 @@ namespace API.Controllers
             return success ? Ok() : NotFound();
         }
     }
-
 }

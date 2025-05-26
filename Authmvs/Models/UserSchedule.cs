@@ -11,14 +11,14 @@ namespace ModelsUsers.Users
 
         
         public DateTime Date { get; set; }
-        public DateTime StartTime { get; set; }
-        public DateTime EndTime { get; set; }
+        public TimeSpan  StartTime { get; set; }
+        public TimeSpan  EndTime { get; set; }
 
         [ForeignKey("UserProfilesId")]
        public int UserProfilesId { get; set; }
         public UserSchedule() { }
 
-        public UserSchedule(int userScheduleId, int userProfilesId, DateTime date, DateTime startTime, DateTime endTime)
+        public UserSchedule(int userScheduleId, int userProfilesId, DateTime date, TimeSpan  startTime, TimeSpan  endTime)
         {
             UserScheduleId = userScheduleId;
             UserProfilesId = userProfilesId;
