@@ -16,7 +16,7 @@ namespace Service.SUserService
 
         public async Task<UserSchedule> CreateAsync(UserSchedule entity)
         {
- 
+
             _context.UserSchedules.Add(entity);
             await _context.SaveChangesAsync();
 
@@ -29,7 +29,7 @@ namespace Service.SUserService
             var userSchedule = await _context.UserSchedules.FindAsync(id);
             if (userSchedule == null)
             {
-                return false; 
+                return false;
             }
 
             _context.UserSchedules.Remove(userSchedule);
@@ -38,30 +38,30 @@ namespace Service.SUserService
             return true;
         }
 
-      
+
         public async Task<IEnumerable<UserSchedule>> GetAllAsync()
         {
             return await _context.UserSchedules
                                  .ToListAsync();
         }
 
-     
+
         public async Task<UserSchedule> GetByIdAsync(int id)
         {
             return await _context.UserSchedules
                                  .FirstOrDefaultAsync(us => us.UserScheduleId == id);
         }
 
-       
+
         public async Task<UserSchedule> UpdateAsync(int id, UserSchedule entity)
         {
             var userSchedule = await _context.UserSchedules.FindAsync(id);
             if (userSchedule == null)
             {
-                return null; 
+                return null;
             }
 
-        
+
             userSchedule.UserProfilesId = entity.UserProfilesId;
             userSchedule.Date = entity.Date;
             userSchedule.StartTime = entity.StartTime;
@@ -72,5 +72,15 @@ namespace Service.SUserService
 
             return userSchedule;
         }
+
+        public async Task<IEnumerable<UserSchedule>> GetByDateAsync(DateTime date)
+        {
+            return await _context.UserSchedules
+                .Where(us => us.Date.Date == date.Date)
+                .ToListAsync();
+        }
+
     }
+
+
 }

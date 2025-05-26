@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using ModelsUsers.Users;
 using RepositoriesIAuthenticate.IGenericService;
+using Service.SUserService;
 
 namespace API.Controllers
 {
@@ -9,10 +10,12 @@ namespace API.Controllers
     public class UserScheduleController : ControllerBase
     {
         private readonly IGenericService<UserSchedule> _service;
+        private readonly SUserSchedule _Uservice;
 
-        public UserScheduleController(IGenericService<UserSchedule> service)
+        public UserScheduleController(IGenericService<UserSchedule> service, SUserSchedule _Uservice)
         {
             _service = service;
+            this._Uservice = _Uservice;
         }
 
         [HttpGet]
@@ -60,5 +63,13 @@ namespace API.Controllers
             var success = await _service.DeleteAsync(id);
             return success ? Ok() : NotFound();
         }
+    
+    [HttpGet("by-date")]
+        public async Task<IActionResult> GetByDate([FromQuery] DateTime date)
+        {
+            var result = await _Uservice.GetByDateAsync(date.Date);
+            return Ok(result);
+        }
+
     }
 }

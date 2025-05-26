@@ -34,6 +34,7 @@ builder.Services.AddScoped<IGenericService<Theme>,STheme>();
 builder.Services.AddScoped<IGenericService<ThemeUser>,SThemeUser>();
 builder.Services.AddScoped<IGenericService<Occupation>,SOccupation>();
 builder.Services.AddScoped<IGenericService<OccupationUser>,SOccupationUser>();
+builder.Services.AddScoped<SUserSchedule>();
 
 // JWT configuration
 string? secretkey = builder.Configuration.GetSection("settings").GetSection("secretkey").ToString();
