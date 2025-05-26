@@ -25,9 +25,11 @@ namespace API.Controllers
             return result == null ? NotFound() : Ok(result);
         }
 
-        [HttpPost]
+        [HttpPost("/create")]
         public async Task<IActionResult> Create(UserSchedule entity) =>
             Ok(await _service.CreateAsync(entity));
+
+
 
         [HttpPost("bulk")]
         public async Task<IActionResult> CreateBulk([FromBody] List<UserSchedule> schedules)
