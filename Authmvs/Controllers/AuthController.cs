@@ -1,50 +1,47 @@
 using DTOs;
+
 using Microsoft.AspNetCore.Mvc;
-using ModelsUsers.Users;
+
+
 using RepositoriesIAuthenticate.IAuthenticate;
 
 namespace ControllersCAuthenticate.CAuthenticate
 {
     [ApiController]
-    [Route("[controller]")]
-    public class CAuthenticateController : ControllerBase
+    [Route("api/[controller]")]
+    public class AuthenticateController : ControllerBase
     {
-        private readonly IAuthenticate _authenticationUser;
+        private readonly IAuthenticate _authenticationService;
 
-        public CAuthenticateController(IAuthenticate authenticationUser)
+        public AuthenticateController(IAuthenticate authenticationService)
         {
-            this._authenticationUser = authenticationUser;
+            _authenticationService = authenticationService;
         }
 
-        [HttpPost("/userValidateLogin")]
-        public IActionResult Validate([FromBody] LoginRequest user)
+        [HttpPost("validate-login")]
+        public IActionResult ValidateLogin([FromBody] LoginRequest  request)
         {
             try
             {
-                if (string.IsNullOrEmpty(user.UserMail) || string.IsNullOrEmpty(user.UserPassword))
+                if (string.IsNullOrWhiteSpace(request.UserMail) || string.IsNullOrWhiteSpace(request.UserPassword))
                 {
                     return BadRequest("Please enter the data");
                 }
 
-                var validatedResult = this._authenticationUser.ValidateUser(user.UserMail, user.UserPassword);
+                var validatedUser = _authenticationService.ValidateUser(request.UserMail, request.UserPassword);
 
-                if (validatedResult.user == null)
+                if (validatedUser == null)
                 {
-                    throw new Exception("User Not found");
+                    return Unauthorized("User not found or invalid credentials");
                 }
 
-                // Aquí generas el token con id, userProfilesId y username
-                string token = _authenticationUser.GenerateToken(
-                    validatedResult.user.UserId,
-                    validatedResult.userProfilesId,
-                    validatedResult.user.UserName
-                );
+                string token = _authenticationService.GenerateToken(validatedUser.UserId, validatedUser.UserName);
 
-                return Ok(token);
+                return Ok(new { Token = token });
             }
             catch (Exception ex)
             {
-                return StatusCode(500, ex.Message);
+                return StatusCode(500, $"Internal server error: {ex.Message}");
             }
         }
     }
