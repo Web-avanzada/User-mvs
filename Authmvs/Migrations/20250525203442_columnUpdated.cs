@@ -11,53 +11,55 @@ namespace Authmvs.Migrations
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropForeignKey(
-                name: "FK_OccupationUsers_Occupations_OccupationId",
-                table: "OccupationUsers");
+            // COMENTA TODAS LAS LÍNEAS DE DROPFOREIGNKEY
+    // migrationBuilder.DropForeignKey(
+    //     name: "FK_OccupationUsers_Occupations_OccupationId",
+    //     table: "OccupationUsers");
 
-            migrationBuilder.DropForeignKey(
-                name: "FK_OccupationUsers_UserProfiles_UserProfilesId",
-                table: "OccupationUsers");
+    // migrationBuilder.DropForeignKey(
+    //     name: "FK_OccupationUsers_UserProfiles_UserProfilesId",
+    //     table: "OccupationUsers");
 
-            migrationBuilder.DropForeignKey(
-                name: "FK_ThemeUsers_Themes_ThemeId",
-                table: "ThemeUsers");
+    // migrationBuilder.DropForeignKey(
+    //     name: "FK_ThemeUsers_Themes_ThemeId",
+    //     table: "ThemeUsers");
 
-            migrationBuilder.DropForeignKey(
-                name: "FK_ThemeUsers_UserProfiles_UserProfilesId",
-                table: "ThemeUsers");
+    // migrationBuilder.DropForeignKey(
+    //     name: "FK_ThemeUsers_UserProfiles_UserProfilesId",
+    //     table: "ThemeUsers");
 
-            migrationBuilder.DropForeignKey(
-                name: "FK_UserProfiles_Users_UserId",
-                table: "UserProfiles");
+    // migrationBuilder.DropForeignKey(
+    //     name: "FK_UserProfiles_Users_UserId",
+    //     table: "UserProfiles");
 
-            migrationBuilder.DropForeignKey(
-                name: "FK_UserSchedules_UserProfiles_UserProfilesId",
-                table: "UserSchedules");
+    // migrationBuilder.DropForeignKey(
+    //     name: "FK_UserSchedules_UserProfiles_UserProfilesId",
+    //     table: "UserSchedules");
 
-            migrationBuilder.DropIndex(
-                name: "IX_UserSchedules_UserProfilesId",
-                table: "UserSchedules");
+    // COMENTA TODAS LAS LÍNEAS DE DROPINDEX
+    // migrationBuilder.DropIndex(
+    //     name: "IX_UserSchedules_UserProfilesId",
+    //     table: "UserSchedules");
 
-            migrationBuilder.DropIndex(
-                name: "IX_UserProfiles_UserId",
-                table: "UserProfiles");
+    // migrationBuilder.DropIndex(
+    //     name: "IX_UserProfiles_UserId",
+    //     table: "UserProfiles");
 
-            migrationBuilder.DropIndex(
-                name: "IX_ThemeUsers_ThemeId",
-                table: "ThemeUsers");
+    // migrationBuilder.DropIndex(
+    //     name: "IX_ThemeUsers_ThemeId",
+    //     table: "ThemeUsers");
 
-            migrationBuilder.DropIndex(
-                name: "IX_ThemeUsers_UserProfilesId",
-                table: "ThemeUsers");
+    // migrationBuilder.DropIndex(
+    //     name: "IX_ThemeUsers_UserProfilesId",
+    //     table: "ThemeUsers");
 
-            migrationBuilder.DropIndex(
-                name: "IX_OccupationUsers_OccupationId",
-                table: "OccupationUsers");
+    // migrationBuilder.DropIndex(
+    //     name: "IX_OccupationUsers_OccupationId",
+    //     table: "OccupationUsers");
 
-            migrationBuilder.DropIndex(
-                name: "IX_OccupationUsers_UserProfilesId",
-                table: "OccupationUsers");
+    // migrationBuilder.DropIndex(
+    //     name: "IX_OccupationUsers_UserProfilesId",
+    //     table: "OccupationUsers");
 
             migrationBuilder.AlterColumn<TimeSpan>(
                 name: "StartTime",
