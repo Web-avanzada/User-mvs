@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\marti\\Desktop\\Auth-mvs\\Authmvs\\Authmvs.csproj": {}
+    "D:\\Web Avanzada\\Backend\\User-mvs\\Authmvs\\Authmvs.csproj": {}
   },
   "projects": {
-    "C:\\Users\\marti\\Desktop\\Auth-mvs\\Authmvs\\Authmvs.csproj": {
+    "D:\\Web Avanzada\\Backend\\User-mvs\\Authmvs\\Authmvs.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\marti\\Desktop\\Auth-mvs\\Authmvs\\Authmvs.csproj",
+        "projectUniqueName": "D:\\Web Avanzada\\Backend\\User-mvs\\Authmvs\\Authmvs.csproj",
         "projectName": "Authmvs",
-        "projectPath": "C:\\Users\\marti\\Desktop\\Auth-mvs\\Authmvs\\Authmvs.csproj",
-        "packagesPath": "C:\\Users\\marti\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\marti\\Desktop\\Auth-mvs\\Authmvs\\obj\\",
+        "projectPath": "D:\\Web Avanzada\\Backend\\User-mvs\\Authmvs\\Authmvs.csproj",
+        "packagesPath": "C:\\Users\\SAID\\.nuget\\packages\\",
+        "outputPath": "D:\\Web Avanzada\\Backend\\User-mvs\\Authmvs\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\marti\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\SAID\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -38,7 +38,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net8.0": {
@@ -77,19 +77,19 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[8.0.16, 8.0.16]"
+              "version": "[8.0.15, 8.0.15]"
             },
             {
               "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[8.0.16, 8.0.16]"
+              "version": "[8.0.15, 8.0.15]"
             },
             {
               "name": "Microsoft.NETCore.App.Ref",
-              "version": "[8.0.16, 8.0.16]"
+              "version": "[8.0.15, 8.0.15]"
             },
             {
               "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[8.0.16, 8.0.16]"
+              "version": "[8.0.15, 8.0.15]"
             }
           ],
           "frameworkReferences": {
@@ -100,7 +100,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
